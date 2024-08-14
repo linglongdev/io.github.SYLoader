@@ -1,0 +1,46 @@
+From afa025256eded236e3b939a09312872fa712a248 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Tue, 13 Aug 2024 11:26:19 +0800
+Subject: [PATCH] install
+
+---
+ src/SYLoader.desktop | 7 +++++++
+ src/SYLoader.pro     | 7 +++++++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 src/SYLoader.desktop
+
+diff --git a/src/SYLoader.desktop b/src/SYLoader.desktop
+new file mode 100644
+index 0000000..b574367
+--- /dev/null
++++ b/src/SYLoader.desktop
+@@ -0,0 +1,7 @@
++[Desktop Entry]
++Exec=SYLoader
++Name=SYLoader
++Icon=SYLoader
++Comment=Fast YouTube Downloader
++Type=Application
++Categories=Downloader;Qt;Video;
+\ No newline at end of file
+diff --git a/src/SYLoader.pro b/src/SYLoader.pro
+index f6b88b5..1994e1d 100644
+--- a/src/SYLoader.pro
++++ b/src/SYLoader.pro
+@@ -63,6 +63,13 @@ RESOURCES += \
+ 
+ win32:RC_ICONS += logo.ico
+ 
++target.path =$$PREFIX/bin
++desktop.files =SYLoader.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons
++icons.files = SYLoader.png
++INSTALLS += target desktop icons
++
+ # Comment it if you want update check disabled
+ # Useful if you need to have a package manager aware build.
+ QMAKE_CXXFLAGS += -DWITH_UPDATE_CHECK
+-- 
+2.43.4
+
